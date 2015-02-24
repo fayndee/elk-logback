@@ -41,7 +41,7 @@ RUN mkdir /var/log/kibana
 ### install start-up script
 
 RUN mkdir /etc/service/elk-logback
-ADD ./start.sh /etc/service/elk-logback/run
+ADD ./run.sh /etc/service/elk-logback/run
 RUN chmod +x /etc/service/elk-logback/run
 
 
