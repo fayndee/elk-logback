@@ -12,7 +12,7 @@ done
 
 if [[ -n $(curl localhost:9200 2> /dev/null) ]]; then
   echo "kibana started"
-  /opt/kibana/bin/kibana &> /var/log/kibana/kibana.log &
+  /opt/kibana/bin/kibana >> /var/log/kibana/kibana.log 2>&1
 else
   echo "kibana could not be started, please check elasticsearch configuration."
   exit 1

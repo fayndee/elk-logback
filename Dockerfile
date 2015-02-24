@@ -40,12 +40,13 @@ RUN mkdir /var/log/kibana
 
 ### install start-up script
 
-ADD ./start.sh /usr/local/bin/start.sh
-RUN chmod +x /usr/local/bin/start.sh
+RUN mkdir /etc/service/elk-logback
+ADD ./start.sh /etc/service/elk-logback/run
+RUN chmod +x /etc/service/elk-logback/run
 
 
 ### start up everthing
 
-EXPOSE 5601 9200 4560 4570
+EXPOSE 9200 4560 4570 5601
 
-CMD [ "/usr/local/bin/start.sh" ]
+CMD [ "/sbin/my_init" ]
