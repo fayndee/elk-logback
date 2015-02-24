@@ -47,6 +47,6 @@ RUN chmod +x /etc/service/elk-logback/run
 
 ### start up everthing
 
-EXPOSE 9200 4560 4570 5601
+EXPOSE 9200 4560 4570/udp 5601
 
 CMD [ "/sbin/my_init" ]
